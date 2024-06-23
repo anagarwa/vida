@@ -6,8 +6,7 @@ function initializeMap() {
         center: [28.6139, 77.2090], // Default to New Delhi
         zoom: 12
     });
-    console.log(map);
-    console.log(markers);
+    updateMap('ahmedabad');
 }
 
 function onMapMyIndiaLoad() {

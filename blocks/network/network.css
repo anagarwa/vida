@@ -256,6 +256,7 @@
     height: 3rem;
     padding: 0 1rem 0 3rem;
     width: 100%;
+    text-transform: capitalize;
 }
 
 
@@ -269,6 +270,7 @@
 .community-charging-card-parent-container .fast-charging-search-container .city-option p {
     color: #222;
     font-size: .875rem;
+    text-transform: capitalize;
 }
 
 .mmi-map {

@@ -135,7 +135,7 @@ function updateStaticContent(mainContainer) {
 // Create input field
     const inputField = document.createElement('input');
     inputField.classList.add('fast-charging-city-search-input');
-    inputField.placeholder = 'Select City';
+    inputField.placeholder = 'Ahmedabad';
     inputField.type = 'text';
     fastChargingSearchContainer.appendChild(inputField);
 
