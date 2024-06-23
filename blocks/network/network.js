@@ -1,31 +1,31 @@
 
 
-function initializeMap() {
-    var map;
-    map = new MapmyIndia.Map('map', {
-        center: [28.6139, 77.2090], // Default to New Delhi
-        zoom: 12
-    });
-}
+// function initializeMap() {
+//     var map;
+//     map = new MapmyIndia.Map('map', {
+//         center: [28.6139, 77.2090], // Default to New Delhi
+//         zoom: 12
+//     });
+// }
 
-function onMapMyIndiaLoad() {
-    initializeMap();
+// function onMapMyIndiaLoad() {
+//     initializeMap();
+//
+//     // document.getElementById('cityDropdown').addEventListener('change', function() {
+//     //     var selectedCity = this.value;
+//     //     if (selectedCity) {
+//     //         fetchServiceCenters(selectedCity);
+//     //     }
+//     // });
+// }
 
-    document.getElementById('cityDropdown').addEventListener('change', function() {
-        var selectedCity = this.value;
-        if (selectedCity) {
-            fetchServiceCenters(selectedCity);
-        }
-    });
-}
-
-async function checkMapmyIndiaLoaded() {
-    if (typeof MapmyIndia !== 'undefined' && typeof MapmyIndia.Map !== 'undefined') {
-        onMapMyIndiaLoad();
-    } else {
-        setTimeout(checkMapmyIndiaLoaded, 100);
-    }
-}
+// async function checkMapmyIndiaLoaded() {
+//     if (typeof MapmyIndia !== 'undefined' && typeof MapmyIndia.Map !== 'undefined') {
+//         onMapMyIndiaLoad();
+//     } else {
+//         setTimeout(checkMapmyIndiaLoaded, 100);
+//     }
+// }
 
 export default async function decorate(block) {
 
@@ -42,6 +42,6 @@ export default async function decorate(block) {
     mapDiv.className = 'map';
     mapDiv.id = 'map';
     containerDiv.appendChild(mapDiv);
-    checkMapmyIndiaLoaded();
+  //  checkMapmyIndiaLoaded();
 
 }
