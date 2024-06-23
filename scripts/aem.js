@@ -693,6 +693,8 @@ async function waitForLCP(lcpBlocks) {
   });
 }
 
+
+
 init();
 
 export {

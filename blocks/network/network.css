@@ -4,7 +4,318 @@
 
 .block.network .container .map {
     height: 226px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
 }
+
+.block.network .container .map .icon {
+    text-align: center;
+}
+
+.community-charging-card-parent-container {
+    background: #e4eaf1;
+    display: grid;
+    padding: 2rem 1.25rem;
+    -webkit-transition: opacity 1.5s ease-out;
+    transition: opacity 1.5s ease-out;
+}
+
+.community-charging-card-parent-container__header-container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: .3125rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    padding: 0 4.625rem 1.5rem 0;
+}
+
+.community-charging-card-parent-container__header-container .pre-title {
+    color: #222;
+    font-family: PP Neue Montreal;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.community-charging-card-parent-container__header-container .title {
+    color: #222;
+    font-family: PP Neue Montreal;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container__details-container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: .375rem;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container .icon-container {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 1.25rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: .15625rem .2573125rem .09375rem .3004375rem;
+    width: 1.25rem;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container .icon-container img {
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    border: 0;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container .content-container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: .375rem;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container .content-container .label-text {
+    color: #222;
+    font-family: PP Neue Montreal;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.community-charging-card-parent-container .charging-stations-statistics-container .content-container .label-value {
+    color: #222;
+    font-family: PP Neue Montreal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    leading-trim: both;
+    text-align: center;
+    text-edge: cap;
+}
+
+.community-charging-card-parent-container .description-container-right {
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container .fast-charging-error-msg {
+    color: #c00;
+    font-size: .75rem;
+    font-weight: 400;
+    margin: .25rem 0 0 .25rem;
+}
+
+.community-charging-card-parent-container .label-count {
+    font-family: PP Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 1.5rem 0 0;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container {
+    margin: 1.5rem 0 1rem;
+    -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+    order: 5;
+    position: relative;
+}
+
+
+.community-charging-card-parent-container .fast-charging-search-container .fast-charging-search-find-icon {
+    height: 1.25rem;
+    left: 1rem;
+    position: absolute;
+    top: .875rem;
+    width: 1.25rem;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container .fast-charging-search-find-icon img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    border: 0;
+}
+
+
+
+.community-charging-card-parent-container .fast-charging-search-container .fast-charging-chevron-down-icon {
+    height: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    top: .75rem;
+    width: 1.5rem;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container .fast-charging-chevron-down-icon img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
+
+.community-charging-card-parent-container .description-container-right p {
+    color: #222;
+    font-family: PP Neue Montreal;
+    font-size: 1pc;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 24px;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container .city-option-container {
+    background: #fff;
+    border-radius: .5rem;
+    margin: .125rem 0 0;
+    max-height: 10rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.community-charging-card-parent-container .d-none {
+    display: none;
+}
+
+.community-charging-card-parent-container .d-block {
+    display: block;
+}
+
+
+.community-charging-card-parent-container .fast-charging-search-container input {
+    color: #ff5310;
+    font-family: PP Neue Montreal;
+    font-size: 1pc;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: #fff;
+    border: none;
+    border-radius: .5rem;
+    -webkit-box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 0 .625rem 0 rgba(0, 0, 0, .1);
+    color: #222;
+    height: 3rem;
+    padding: 0 1rem 0 3rem;
+    width: 100%;
+}
+
+
+.community-charging-card-parent-container .fast-charging-search-container .city-option {
+    border-bottom: 1px solid #e4eaf1;
+    cursor: pointer;
+    height: 2.5rem;
+    padding: .75rem 1rem;
+}
+
+.community-charging-card-parent-container .fast-charging-search-container .city-option p {
+    color: #222;
+    font-size: .875rem;
+}
+
+.mmi-map {
+    border-radius: .625rem;
+    /*height: 14.125rem;*/
+    margin: 0 auto 1rem;
+    /*max-width: 37.5rem;*/
+}
+
+.mapboxgl-map {
+    font: 12px / 20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (min-width: 1025px) {
+    .mmi-map {
+        border-radius: 1rem;
+        height: 20.625rem;
+        margin-bottom: 2.125rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .fast-charging-network-wrapper .charging-map-my-india-cl-container .mmi-map {
+        border-radius: 1rem !important;
+        height: auto !important;
+        max-width: unset !important;
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .city-option p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .city-option {
+        height: 3.5rem;
+        padding: 1rem;
+    }
+}
+
 
 @media (width >= 1024px) {
     .block.network .container .map {
@@ -12,3 +323,207 @@
         height: 1100px;
     }
 }
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container {
+        grid-template-columns: 50% 50%;
+        padding: 4rem 5.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container__header-container .pre-title {
+        color: #222;
+        font-family: PP Neue Montreal;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container__header-container .title {
+        font-family: PP Neue Montreal;
+        font-size: 3pc;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        color: #222;
+    }
+}
+
+@media (min-width: 1024px) {
+.community-charging-card-parent-container .charging-stations-statistics-container {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 2.125rem;
+    justify-self: flex-start;
+    -webkit-box-ordinal-group: 4;
+    -ms-flex-order: 3;
+    order: 3;
+}
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .charging-stations-statistics-container__details-container {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: .5625rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .charging-stations-statistics-container .icon-container {
+        height: 1.875rem;
+        width: 1.875rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .charging-stations-statistics-container .content-container .label-text {
+        color: #222;
+        font-family: PP Neue Montreal;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .charging-stations-statistics-container .content-container .label-value {
+        color: #222;
+        font-family: PP Neue Montreal;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        leading-trim: both;
+        text-align: center;
+        text-edge: cap;
+    }
+}
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container.charging-locator-page-header-variation .description-container-right {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .description-container-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        grid-area: 1 / 2 / span 3 / span 1;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        margin-top: 10%;
+        -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+        order: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .description-container-right p {
+        color: #222;
+        font-family: PP Neue Montreal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container input {
+        font-family: PP Neue Montreal;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 1rem;
+        color: #222;
+        height: 5.25rem;
+        padding: 0 1.5rem 0 4rem;
+    }
+}
+
+
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .city-option-container {
+        max-height: 15rem;
+    }
+}
+
+
+
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .fast-charging-error-msg {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .community-charging-card-parent-container .label-count {
+        color: #222;
+        font-family: PP Neue Montreal;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container {
+        margin: 2rem 0 1.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .fast-charging-search-find-icon {
+        height: 1.625rem;
+        left: 1.5rem;
+        top: 1.75rem;
+        width: 1.625rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .community-charging-card-parent-container .fast-charging-search-container .fast-charging-chevron-down-icon {
+        height: 2.25rem;
+        right: 1.5rem;
+        top: 1.5rem;
+        width: 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .charging-map-my-india-cl-container {
+        padding: 0 5.5rem;
+    }
+}
+
