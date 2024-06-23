@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0296)https://shared.officeapps.live.com/clipboard/shared.aspx?CreatorOrigin=https%3A%2F%2Fexcel.officeapps.live.com&usid=3665da9c-b71b-4754-6ff8-263ceffafe45&BulsEndpointUrl=https%3A%2F%2Fexcel-telemetry.officeapps.live.com%2Fxt%2FRemoteUls.ashx&corrid=e4cf337c-cd87-4e65-a715-349f993e139a&NoAuth=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>
+	Shared Clipboard iframe content
+</title>
+  <script type="text/javascript">
+var sharedClipboardSettings = {
+ whitelistOriginComponents: 1,
+ staticContentURLPrefix: "https://res-1.cdn.office.net:443/officeonline/clipboard/s/161781342305_App_Scripts/",
+ is1CDNEnabled: "True",
+ sharedClipboardExpirationInMinutes: 3600,
+ clipboardPromiseTimeoutInMinutes: 2,
+ sharedClipboardSchemaVersion: 2,
+ remoteLoggerPath: "/x/RemoteUls.ashx",
+
+ sharedClipboardHostingApp: "shared",
+ sharedClipboardHostingApps: "[\"broadcast\", \"excel\", \"onenote\", \"powerpoint\", \"view\", \"visio\", \"word-edit\", \"word-view\", \"shared\"]",
+ sharedClipboardHostingEnvironments: "[\"officeapps.live.com\", \"officeapps-df.live.com\", \"online.office.de\", \"gov.online.office365.us\", \"dod.online.office365.us\", \"partner.officewebapps.cn\"]"
+
+};
+
+var es6PromiseScriptFileName = 'es6-promise.auto.min.js';
+var sharedClipboardScriptFileName = 'sharedclipboard.min.js';
+
+var promisesCapability = typeof Promise !== 'undefined' && typeof Promise.resolve === 'function' && Promise.resolve(0) &&
+ typeof Promise.resolve(0).then === 'function';
+
+function loadScript(fileName) {
+  var scriptElement = document.createElement('script');
+  scriptElement.setAttribute('src', getScriptSrc(fileName));
+  scriptElement.setAttribute('type', 'text/javascript');
+  scriptElement.setAttribute('async', 'false');
+  scriptElement.setAttribute('defer', 'defer');
+  if (sharedClipboardSettings.is1CDNEnabled === "True") {
+    scriptElement.setAttribute('crossorigin', 'anonymous');
+  }
+  var body = document.getElementsByTagName('body')[0];
+  body.appendChild(scriptElement);
+}
+
+function getScriptSrc(fileName) {
+  var prefix = sharedClipboardSettings.staticContentURLPrefix;
+  if (!prefix) {
+    return fileName;
+  }
+
+  var queryMark = prefix.indexOf('?');
+  if (queryMark < 0) {
+    return prefix + fileName;
+  }
+
+  var postfix = prefix.substr(queryMark);
+  prefix = prefix.substr(0, queryMark);
+  return prefix + fileName + postfix;
+}
+  </script>
+ </head>
+ <body onload="window.sharedClipboard.initialize();">
+  <script>
+if (!promisesCapability) {
+ loadScript(es6PromiseScriptFileName);
+}
+loadScript(sharedClipboardScriptFileName);
+  </script><script src="./sharedclipboard.min.js" type="text/javascript" async="false" defer="defer" crossorigin="anonymous"></script>
+ 
+
+
+</body></html>
