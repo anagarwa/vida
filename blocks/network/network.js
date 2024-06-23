@@ -1,4 +1,4 @@
-
+import { decorateIcons } from '../../scripts/aem.js';
 
 // function initializeMap() {
 //     var map;
@@ -42,6 +42,12 @@ export default async function decorate(block) {
     mapDiv.className = 'map';
     mapDiv.id = 'map';
     containerDiv.appendChild(mapDiv);
+
+    const iconSpan = document.createElement('span');
+    iconSpan.className = 'icon icon-search';
+    mapDiv.appendChild(iconSpan);
+    decorateIcons(mapDiv);
+
   //  checkMapmyIndiaLoaded();
 
 }
