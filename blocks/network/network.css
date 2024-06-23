@@ -1,0 +1,14 @@
+.block.network .container {
+    background-color: #e4eaf1;
+}
+
+.block.network .container .map {
+    height: 500px;
+}
+
+@media (width >= 1024px) {
+    .block.network .container .map {
+        padding: 0 5.5rem;
+        height: 1100px;
+    }
+}
