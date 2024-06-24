@@ -91,59 +91,133 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
-  const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  block.innerHTML = '';
+  block.classList.add('vida-header-wrapper');
+  block.classList.add('header-nav-page');
 
-  // decorate nav DOM
-  block.textContent = '';
-  const nav = document.createElement('nav');
-  nav.id = 'nav';
-  while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  const headerWrapper =  block;
 
-  const classes = ['brand', 'sections', 'tools'];
-  classes.forEach((c, i) => {
-    const section = nav.children[i];
-    if (section) section.classList.add(`nav-${c}`);
-  });
+  const headerContainer = document.createElement('div');
+  headerContainer.className = 'vida-header-container';
 
-  const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  const logoContainer = document.createElement('div');
+  logoContainer.className = 'vida-logo-container';
+
+  const logoLink = document.createElement('a');
+  logoLink.href = '/';
+
+  const logoImg = document.createElement('img');
+  logoImg.src = '../../icons/vida_white_logo_croped.png';
+  logoImg.alt = 'vida logo';
+
+  const headerTitleContainer = document.createElement('div');
+  headerTitleContainer.className = 'vida-header-title-container';
+
+  const headerTitleFlexContainer = document.createElement('div');
+  headerTitleFlexContainer.className = 'vida-header-title-flex-container';
+
+  const backIconContainer = document.createElement('div');
+  backIconContainer.className = 'vida-header-back-icon';
+
+  const backIconLink = document.createElement('a');
+  backIconLink.href = '#';
+  backIconLink.target = '_self';
+  backIconLink.rel = 'noreferrer';
+
+  const backIconImg = document.createElement('img');
+  backIconImg.src = '/content/dam/vida2-0/global/icons/desktop/left_arrow_icon.svg';
+  backIconImg.alt = 'vida_header_back_icon';
+
+  const headerTitle = document.createElement('div');
+  headerTitle.className = 'vida-header-title';
+
+  const headerH1 = document.createElement('h1');
+  headerH1.textContent = 'Locate a Fast Charger';
+
+  const navbarContainer = document.createElement('div');
+  navbarContainer.className = 'vida-navbar-container';
+
+  // Helper function to create navbar options
+  function createNavbarOption(href, imgSrc, imgAlt, text) {
+    const navbarOption = document.createElement('div');
+    navbarOption.className = 'vida-navbar-option';
+
+    const navbarOptionIcon = document.createElement('div');
+    navbarOptionIcon.className = 'vida-navbar-option-icon';
+
+    const navbarOptionLink = document.createElement('a');
+    navbarOptionLink.className = 'vida-navbar-option-link';
+    navbarOptionLink.href = href;
+    navbarOptionLink.target = '_self';
+    navbarOptionLink.rel = 'noreferrer';
+
+    const navbarOptionImg = document.createElement('img');
+    navbarOptionImg.className = 'vida-navbar-option-img';
+    navbarOptionImg.src = imgSrc;
+    navbarOptionImg.alt = imgAlt;
+
+    const navbarOptionText = document.createElement('p');
+    const navbarOptionTextLink = document.createElement('a');
+    navbarOptionTextLink.href = href;
+    navbarOptionTextLink.target = '_self';
+    navbarOptionTextLink.rel = 'noreferrer';
+    navbarOptionTextLink.className = 'vida-navbar-option-text';
+    navbarOptionTextLink.textContent = text;
+
+    navbarOptionIcon.appendChild(navbarOptionLink);
+    navbarOptionLink.appendChild(navbarOptionImg);
+    navbarOptionText.appendChild(navbarOptionTextLink);
+    navbarOption.appendChild(navbarOptionIcon);
+    navbarOption.appendChild(navbarOptionText);
+
+    return navbarOption;
   }
 
-  const navSections = nav.querySelector('.nav-sections');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
-      });
-    });
-  }
+  const exploreOption = createNavbarOption('https://www.vidaworld.com/products.html', '../../icons/explore_white_icon.svg', 'vida_navbar_option', 'Explore');
+  const tryOption = createNavbarOption('https://www.vidaworld.com/test-ride.html', '../../icons/try_white_icon.svg', 'vida_navbar_option', 'Try');
+  const buyOption = createNavbarOption('https://www.vidaworld.com/reserve.html', '../../icons/buy_white_icon.svg', 'vida_navbar_option', 'Buy');
+  const loveOption = createNavbarOption('https://www.vidaworld.com/love.html', '../../icons/love_white_icon.svg', 'vida_navbar_option', 'Love');
 
-  // hamburger for mobile
-  const hamburger = document.createElement('div');
-  hamburger.classList.add('nav-hamburger');
-  hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
-    </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
-  nav.setAttribute('aria-expanded', 'false');
-  // prevent mobile nav behavior on window resize
-  toggleMenu(nav, navSections, isDesktop.matches);
-  isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
+  const hamburgerContainer = document.createElement('div');
+  hamburgerContainer.className = 'vida-hamburger-container';
 
-  const navWrapper = document.createElement('div');
-  navWrapper.className = 'nav-wrapper';
-  navWrapper.append(nav);
-  block.append(navWrapper);
+  const hamburgerLine1 = document.createElement('div');
+  hamburgerLine1.className = 'vida-hamburger-line';
+
+  const hamburgerLine2 = document.createElement('div');
+  hamburgerLine2.className = 'vida-hamburger-line';
+
+  const hamburgerLine3 = document.createElement('div');
+  hamburgerLine3.className = 'vida-hamburger-line';
+
+  // Assembling elements
+  logoLink.appendChild(logoImg);
+  logoContainer.appendChild(logoLink);
+
+  backIconLink.appendChild(backIconImg);
+  backIconContainer.appendChild(backIconLink);
+
+  headerTitle.appendChild(headerH1);
+
+  headerTitleFlexContainer.appendChild(backIconContainer);
+  headerTitleFlexContainer.appendChild(headerTitle);
+
+  headerTitleContainer.appendChild(headerTitleFlexContainer);
+
+  navbarContainer.appendChild(exploreOption);
+  navbarContainer.appendChild(tryOption);
+  navbarContainer.appendChild(buyOption);
+  navbarContainer.appendChild(loveOption);
+
+  hamburgerContainer.appendChild(hamburgerLine1);
+  hamburgerContainer.appendChild(hamburgerLine2);
+  hamburgerContainer.appendChild(hamburgerLine3);
+
+  navbarContainer.appendChild(hamburgerContainer);
+
+  headerContainer.appendChild(logoContainer);
+  headerContainer.appendChild(headerTitleContainer);
+  headerContainer.appendChild(navbarContainer);
+
+  headerWrapper.appendChild(headerContainer);
 }
